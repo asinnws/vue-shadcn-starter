@@ -1,0 +1,4 @@
+{
+  "*.{js,ts,vue}": "npm run lint --fix",
+  "*.{js,ts,vue,css,scss,json,md,yaml,yml}": "npm run format"
+}
