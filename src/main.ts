@@ -9,8 +9,10 @@ import { fetchLocaleMessages, type Locale } from './lib/locale';
 (async () => {
   const { app, context } = applyProviders(createApp(App));
 
-  const messages = await fetchLocaleMessages(context.i18n.global.locale.value as Locale);
-  context.i18n.global.setLocaleMessage(context.i18n.global.locale.value, messages);
+  const locale = context.i18n.global.locale.value as Locale;
+
+  const messages = await fetchLocaleMessages(locale);
+  context.i18n.global.setLocaleMessage(locale, messages);
 
   app.mount('#app');
 })();

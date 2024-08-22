@@ -8,11 +8,11 @@ export function applyProviders(app: App) {
 
   type Provider = ReturnType<(typeof providers)[number]>;
 
-  type Context = {
+  type ProvidersContext = {
     [P in Provider as keyof P]: P[keyof P];
   };
 
-  const context = {} as Context;
+  const context = {} as ProvidersContext;
 
   providers.forEach((provide) => {
     const provider = provide(app);

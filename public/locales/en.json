@@ -4,6 +4,13 @@
     "links": {
       "home": "Home",
       "about": "About"
+    },
+    "locales": {
+      "en": "English",
+      "ru": "Русский"
+    },
+    "actions": {
+      "choose_language": "Choose Language"
     }
   },
 
