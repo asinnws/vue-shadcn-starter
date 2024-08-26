@@ -1,31 +1,31 @@
 export default {
   common: {
-    greeting: 'Hello there!',
+    greeting: 'Hello! (test translation)',
     links: {
-      home: 'Home',
-      about: 'About111'
+      home: 'Home (test translation)',
+      about: 'About (test translation)'
     },
     locales: {
-      en: 'English',
-      ru: 'Русский'
+      en: 'English (test translation)',
+      ru: 'Русский (test translation)'
     },
     actions: {
-      choose_language: 'Choose Language'
+      choose_language: 'Choose Language (test translation)'
     }
   },
 
   pages: {
     home: {
-      title: 'Home Page'
+      title: 'Home Page (test translation)'
     },
     about: {
-      title: 'About Page'
+      title: 'About Page (test translation)'
     },
     not_found: {
-      title: 'Page is not Found',
-      description: 'Page you are looking for does not exist',
+      title: 'Page is not Found (test translation)',
+      description: 'Page you are looking for does not exist (test translation)',
       actions: {
-        go_home: 'Go to the Home Page'
+        go_home: 'Go to the Home Page (test translation)'
       }
     }
   }

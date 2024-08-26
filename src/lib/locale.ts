@@ -2,7 +2,7 @@ export const LOCALES = ['en', 'ru'] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = 'en';
 
-const PERSISTED_LOCALE_KEY = 'i18n-locale';
+export const PERSISTED_LOCALE_KEY = 'i18n-locale';
 
 export function getPersistedLocale(): Locale {
   const unparsedLocale = localStorage.getItem(PERSISTED_LOCALE_KEY);

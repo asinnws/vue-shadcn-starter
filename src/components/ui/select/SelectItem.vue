@@ -17,6 +17,7 @@ const forwardedProps = useForwardProps(delegatedProps);
 
 <template>
   <SelectItem
+    :data-value="forwardedProps.value"
     v-bind="forwardedProps"
     :class="
       cn(
