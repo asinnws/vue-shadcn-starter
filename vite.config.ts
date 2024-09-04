@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       VueRouter({
-        dts: 'src/typed-router.d.ts'
+        dts: 'src/lib/types/typed-router.d.ts'
       }),
       Layouts(),
       Vue()
