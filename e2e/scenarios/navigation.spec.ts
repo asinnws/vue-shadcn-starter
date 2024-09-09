@@ -13,7 +13,9 @@ test('navigates from home to about page on click', async ({ homePage, aboutPage 
   console.log('verify the about page is loaded correctly');
   expect(await aboutPage.isReady()).toBe(true);
 
-  console.log('verify the about page route matches about link and about link has aria-current="page"');
+  console.log('verify the about page route matches the about link href');
   await aboutPage.verifyRoute();
+
+  console.log('verify the about link has aria-current attribute with "page" value');
   await aboutPage.verifyAboutLinkIsCurrent();
 });
