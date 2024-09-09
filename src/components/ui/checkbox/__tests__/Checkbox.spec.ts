@@ -1,6 +1,10 @@
 import { mount } from '@vue/test-utils';
 import Checkbox from '../Checkbox.vue'; // Adjust the path as needed
 import { describe, expect, it } from 'vitest';
+import { Label } from '../../label';
+import { h } from 'vue';
+
+h;
 
 describe('Checkbox.vue', () => {
   describe('Render', () => {
@@ -32,6 +36,18 @@ describe('Checkbox.vue', () => {
       const wrapper = mount(Checkbox);
 
       await wrapper.find('[role="checkbox"]').trigger('click');
+
+      expect(wrapper.find('[role="checkbox"]').attributes('aria-checked')).toBe('true');
+    });
+
+    it('changes state by clicking on its label', async () => {
+      const wrapper = mount(Label, {
+        slots: {
+          default: [h('span', 'label text'), h(Checkbox)]
+        }
+      });
+
+      await wrapper.find('label').trigger('click');
 
       expect(wrapper.find('[role="checkbox"]').attributes('aria-checked')).toBe('true');
     });
