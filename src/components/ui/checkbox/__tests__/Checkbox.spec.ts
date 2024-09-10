@@ -1,10 +1,8 @@
 import { mount } from '@vue/test-utils';
-import Checkbox from '../Checkbox.vue'; // Adjust the path as needed
+import Checkbox from '../Checkbox.vue';
 import { describe, expect, it } from 'vitest';
 import { Label } from '../../label';
 import { h } from 'vue';
-
-h;
 
 describe('Checkbox.vue', () => {
   describe('Render', () => {
