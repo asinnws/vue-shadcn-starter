@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import Input from './Input.vue';
 
-// TODO: get rid of ts-ignore
-
 // Meta configuration for the Input component
 const meta: Meta<typeof Input> = {
   title: 'Components/Input',
@@ -10,13 +8,10 @@ const meta: Meta<typeof Input> = {
   argTypes: {
     modelValue: { control: 'text', name: 'Value' },
     class: { control: 'text', name: 'Class' },
-    // @ts-ignore
     placeholder: { control: 'text', name: 'Placeholder' },
     disabled: { control: 'boolean', name: 'Disabled' }
   },
   args: {
-    modelValue: '',
-    // @ts-ignore
     placeholder: 'Enter text...',
     disabled: false
   }
@@ -29,9 +24,22 @@ type Story = StoryObj<typeof Input>;
 export const Default: Story = {
   args: {
     modelValue: '',
-    defaultValue: '',
-    // @ts-ignore
     placeholder: 'Enter text...'
+  },
+  render: (args) => ({
+    components: { Input },
+    setup() {
+      return { args };
+    },
+    template: `<Input v-bind="args" />`
+  })
+};
+
+// Input with default value
+export const WithDefaultValue: Story = {
+  args: {
+    defaultValue: 'Default value',
+    placeholder: 'Type to see changes...'
   },
   render: (args) => ({
     components: { Input },
@@ -46,9 +54,7 @@ export const Default: Story = {
 export const WithPlaceholder: Story = {
   args: {
     modelValue: '',
-    defaultValue: '',
-    // @ts-ignore
-    placeholder: 'Type something here...'
+    placeholder: 'Type to see changes...'
   },
   render: (args) => ({
     components: { Input },
@@ -60,12 +66,25 @@ export const WithPlaceholder: Story = {
 };
 
 // Disabled input
-export const Disabled: Story = {
+export const DisabledEmpty: Story = {
   args: {
     modelValue: '',
-    defaultValue: '',
-    // @ts-ignore
-    placeholder: 'Cannot type here...',
+    placeholder: 'Placeholder - Cannot type here...',
+    disabled: true
+  },
+  render: (args) => ({
+    components: { Input },
+    setup() {
+      return { args };
+    },
+    template: `<Input v-bind="args" />`
+  })
+};
+
+export const DisabledFilled: Story = {
+  args: {
+    modelValue: 'Cannot type here',
+    placeholder: 'Placeholder - Cannot type here...',
     disabled: true
   },
   render: (args) => ({
@@ -80,8 +99,7 @@ export const Disabled: Story = {
 // Input with binding
 export const TwoWayDataBinding: Story = {
   args: {
-    modelValue: 'Two-way binding example',
-    // @ts-ignore
+    modelValue: 'Two-way data binding',
     placeholder: 'Type to see changes...'
   },
   render: (args) => ({
