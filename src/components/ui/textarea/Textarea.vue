@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue';
+import type { HTMLAttributes, TextareaHTMLAttributes } from 'vue';
 import { useVModel } from '@vueuse/core';
 import { cn } from '@/lib/utils';
 
-const props = defineProps<{
-  class?: HTMLAttributes['class'];
+interface ComponentProps extends /* @vue-ignore */ TextareaHTMLAttributes {
   defaultValue?: string | number;
   modelValue?: string | number;
-}>();
+  class?: HTMLAttributes['class'];
+}
+
+const props = defineProps<ComponentProps>();
 
 const emits = defineEmits<{
   (e: 'update:modelValue', payload: string | number): void;

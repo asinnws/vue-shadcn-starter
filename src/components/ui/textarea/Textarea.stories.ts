@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import Input from './Input.vue';
+import Textarea from './Textarea.vue';
 
-// Meta configuration for the Input component
-const meta: Meta<typeof Input> = {
-  title: 'Components/Input',
-  component: Input,
+// Meta configuration for the Textarea component
+const meta: Meta<typeof Textarea> = {
+  title: 'Components/Textarea',
+  component: Textarea,
   argTypes: {
     modelValue: { control: 'text', name: 'Value' },
     class: { control: 'text', name: 'Class' },
@@ -18,54 +18,54 @@ const meta: Meta<typeof Input> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof Textarea>;
 
-// Default input
+// Default textarea
 export const Default: Story = {
   args: {
     modelValue: '',
     placeholder: 'Enter text...'
   },
   render: (args) => ({
-    components: { Input },
+    components: { Textarea },
     setup() {
       return { args };
     },
-    template: `<Input v-bind="args" />`
+    template: `<Textarea v-bind="args" />`
   })
 };
 
-// Input with default value
+// Textarea with default value
 export const WithDefaultValue: Story = {
   args: {
     defaultValue: 'Default value',
     placeholder: 'Type to see changes...'
   },
   render: (args) => ({
-    components: { Input },
+    components: { Textarea },
     setup() {
       return { args };
     },
-    template: `<Input v-bind="args" />`
+    template: `<Textarea v-bind="args" />`
   })
 };
 
-// Input with placeholder
+// Textarea with placeholder
 export const WithPlaceholder: Story = {
   args: {
     modelValue: '',
     placeholder: 'Type to see changes...'
   },
   render: (args) => ({
-    components: { Input },
+    components: { Textarea },
     setup() {
       return { args };
     },
-    template: `<Input v-bind="args" />`
+    template: `<Textarea v-bind="args" />`
   })
 };
 
-// Disabled input
+// Disabled textarea
 export const DisabledEmpty: Story = {
   args: {
     modelValue: '',
@@ -73,11 +73,11 @@ export const DisabledEmpty: Story = {
     disabled: true
   },
   render: (args) => ({
-    components: { Input },
+    components: { Textarea },
     setup() {
       return { args };
     },
-    template: `<Input v-bind="args" />`
+    template: `<Textarea v-bind="args" />`
   })
 };
 
@@ -88,25 +88,25 @@ export const DisabledFilled: Story = {
     disabled: true
   },
   render: (args) => ({
-    components: { Input },
+    components: { Textarea },
     setup() {
       return { args };
     },
-    template: `<Input v-bind="args" />`
+    template: `<Textarea v-bind="args" />`
   })
 };
 
-// Input with binding
+// Textarea with binding
 export const TwoWayDataBinding: Story = {
   args: {
     modelValue: 'Two-way data binding',
     placeholder: 'Type to see changes...'
   },
   render: (args) => ({
-    components: { Input },
+    components: { Textarea },
     setup() {
       return { args };
     },
-    template: `<Input v-bind="args" />`
+    template: `<Textarea v-bind="args" />`
   })
 };
